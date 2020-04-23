@@ -4,7 +4,7 @@ do
   printf "$i \n";
 done
 
-read -p "Check size All S3? " -n 1 -r
+read -p "Check size All S3? (Y/N)" -n 1 -r
 
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
