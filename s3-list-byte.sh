@@ -18,5 +18,7 @@ else
      echo ""
      echo "Please input s3 bucket"
      read s3_bucket
-     aws s3 ls --recursive --human-readable --summarize $s3_bucket --profile $1  | grep 'Total'
+     getsize=$(aws s3 ls --recursive --human-readable --summarize $s3_bucket --profile $1 | grep 'Total\ Size'| awk '{print $3,$4}')
+     echo "=============================="
+     echo "$s3_bucket size: $getsize"
 fi
